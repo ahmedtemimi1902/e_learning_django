@@ -1,5 +1,7 @@
 # students/urls.py
 from django.urls import path
+
+from authentification.models import ReadingState
 from .views import (
     course_list,
     material_list,
@@ -16,4 +18,6 @@ urlpatterns = [
     path('grade/', grade_list, name='grade_list'),
     path('interaction/', interaction_list, name='interaction_list'),
     path('submissions/', submission_list, name='submission-list'),
+    path('save-document-state/', ReadingState.as_view(), name='Readingstate_save'),
+
 ]
